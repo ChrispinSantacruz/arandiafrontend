@@ -24,13 +24,13 @@ RUN mkdir -p /usr/userAPI
 
 WORKDIR /usr/userAPI
 
-COPY APIS/usuarios/package*.json /usr/userAPI
+COPY ./package*.json /usr/userAPI
 
 RUN npm install
 
 RUN npm install dotenv --save-dev
 
-COPY APIS/usuarios /usr/userAPI
+COPY . /usr/userAPI
 
 RUN prisma generate
 
